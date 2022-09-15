@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "dev": "yarn workspace @emoji-mart/website dev",
-    "build": "yarn workspace emoji-mart build",
+    "build": "yarn clean && yarn workspace emoji-mart build",
     "build:data": "yarn workspace @emoji-mart/data build",
     "build:react": "yarn workspace @emoji-mart/react build",
     "build:website": "yarn workspace @emoji-mart/website build",
@@ -15,9 +15,9 @@
     "prettier:fix": "prettier --write .",
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
     "clean": "rm -rf packages/emoji-mart/dist && rm -rf packages/emoji-mart-react/dist && rm -rf packages/emoji-mart-data/dist",
-    "vowel:build:emoji-mart": "yarn build && cp -r packages/emoji-mart/* . && cp .gitignore-vowel .gitignore",
-    "vowel:build:emoji-mart-react": "yarn build && cp -r packages/emoji-mart-react/* . && cp .gitignore-vowel .gitignore",
-    "vowel:build:emoji-mart-data": "yarn build && cp -r packages/emoji-mart-data/* . && cp .gitignore-vowel .gitignore"
+    "vowel:build:emoji-mart": "yarn build && cp -r packages/emoji-mart/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart/package.json ./package.json",
+    "vowel:build:emoji-mart-react": "yarn build && cp -r packages/emoji-mart-react/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart-react/package.json ./package.json",
+    "vowel:build:emoji-mart-data": "yarn build && cp -r packages/emoji-mart-data/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart-data/package.json ./package.json"
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
