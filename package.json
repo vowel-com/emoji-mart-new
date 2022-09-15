@@ -7,13 +7,14 @@
   ],
   "scripts": {
     "dev": "yarn workspace @emoji-mart/website dev",
-    "build": "yarn workspace emoji-mart build",
+    "build": "yarn clean && yarn workspace emoji-mart build",
     "build:data": "yarn workspace @emoji-mart/data build",
     "build:react": "yarn workspace @emoji-mart/react build",
     "build:website": "yarn workspace @emoji-mart/website build",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
+    "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
+    "clean": "rm -rf packages/emoji-mart/build && rm -rf packages/emoji-mart-react/build && rm -rf packages/emoji-mart-data/build"
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
