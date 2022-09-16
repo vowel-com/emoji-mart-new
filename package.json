@@ -16,8 +16,8 @@
     "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
     "clean": "rm -rf packages/emoji-mart/dist && rm -rf packages/emoji-mart-react/dist && rm -rf packages/emoji-mart-data/dist",
     "vowel:build:emoji-mart": "yarn build && cp -r packages/emoji-mart/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart/package.json ./package.json",
-    "vowel:build:emoji-mart-react": "yarn build && cp -r packages/emoji-mart-react/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart-react/package.json ./package.json",
-    "vowel:build:emoji-mart-data": "yarn build && cp -r packages/emoji-mart-data/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart-data/package.json ./package.json"
+    "vowel:build:emoji-mart-react": "yarn build:react && cp -r packages/emoji-mart-react/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart-react/package.json ./package.json",
+    "vowel:build:emoji-mart-data": "yarn build:data && cp -r packages/emoji-mart-data/i18n . && cp -r packages/emoji-mart-data/sets && cp packages/emoji-mart-data/package.json ./package.json"
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
