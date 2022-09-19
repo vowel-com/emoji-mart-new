@@ -8,6 +8,8 @@ See the `vowel` branch / [this PR](https://github.com/vowel-com/emoji-mart-new/p
 
 - https://github.com/missive/emoji-mart/pull/699
     - Fixes an error with our `react-native` app
+- https://github.com/missive/emoji-mart/pull/700
+    - Adds callback for skin tone and fixes bug with skin tone not changing when props change
 
 ## Building
 
