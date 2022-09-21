@@ -1056,6 +1056,7 @@ export default class Picker extends Component {
     return (
       <section
         id="root"
+        part="root"
         class="flex flex-column"
         style={{
           width: this.props.perLine * this.props.emojiButtonSize + (12 + 16),
