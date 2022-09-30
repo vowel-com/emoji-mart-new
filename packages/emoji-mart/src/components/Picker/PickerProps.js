@@ -93,6 +93,8 @@ export default {
   custom: null,
   data: null,
   i18n: null,
+  skinToneEmoji: null,
+  skinToneLabel: null,
 
   // Callbacks
   getImageURL: null,
