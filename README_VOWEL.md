@@ -50,6 +50,7 @@ git checkout vowel-build-emoji-mart && \
 git fetch origin && \
 git reset --hard origin/vowel && \
 yarn vowel:build:emoji-mart && \
+git add . && \
 git commit -am "Build" && \
 git push origin vowel-build-emoji-mart --force
 ```
