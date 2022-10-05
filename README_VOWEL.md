@@ -16,6 +16,8 @@ See the `vowel` branch / [this PR](https://github.com/vowel-com/emoji-mart-new/p
     - Add optional ref to pass for search input
 - https://github.com/missive/emoji-mart/pull/710
     - Add optional skin tone emoji/label
+- https://github.com/missive/emoji-mart/pull/711
+    - Allow passing spritesheet URL as a string to `em-emoji` web component
 
 ## Building
 
