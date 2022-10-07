@@ -1,38 +1,57 @@
 {
-  "name": "@emoji-mart/monorepo",
-  "version": "1.0.0",
-  "private": true,
-  "workspaces": [
-    "packages/*"
+  "name": "emoji-mart",
+  "version": "5.2.2",
+  "description": "Emoji picker for the web",
+  "license": "MIT",
+  "homepage": "https://missiveapp.com/open/emoji-mart",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/missive/emoji-mart",
+    "directory": "packages/emoji-mart"
+  },
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "global": "dist/browser.js",
+  "browserslist": "defaults",
+  "targets": {
+    "main": {
+      "includeNodeModules": true
+    },
+    "module": {
+      "includeNodeModules": true
+    },
+    "global": {
+      "source": "src/browser.js",
+      "includeNodeModules": true
+    }
+  },
+  "keywords": [
+    "emoji",
+    "emoticons",
+    "emoji-picker",
+    "web-component",
+    "twemoji"
   ],
   "scripts": {
-    "dev": "yarn workspace @emoji-mart/website dev",
-    "build": "yarn clean && yarn workspace emoji-mart build",
-    "build:data": "yarn workspace @emoji-mart/data build",
-    "build:react": "yarn workspace @emoji-mart/react build",
-    "build:website": "yarn workspace @emoji-mart/website build",
-    "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
-    "clean": "rm -rf packages/emoji-mart/dist && rm -rf packages/emoji-mart-react/dist && rm -rf packages/emoji-mart-data/dist",
-    "vowel:build:emoji-mart": "yarn build && cp -r packages/emoji-mart/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart/package.json ./package.json",
-    "vowel:build:emoji-mart-react": "yarn build:react && cp -r packages/emoji-mart-react/dist . && cp .gitignore-vowel .gitignore && cp packages/emoji-mart-react/package.json ./package.json",
-    "vowel:build:emoji-mart-data": "yarn build:data && cp -r packages/emoji-mart-data/i18n . && cp -r packages/emoji-mart-data/sets && cp packages/emoji-mart-data/package.json ./package.json"
+    "build": "parcel build --no-autoinstall",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@babel/core": "7.18.9",
-    "@babel/plugin-transform-modules-commonjs": "7.18.6",
-    "jest": "28.0.0",
-    "jest-environment-jsdom": "28.0.0",
-    "prettier": "2.5.1"
+    "@parcel/transformer-inline-string": "2.3.2",
+    "@parcel/transformer-sass": "2.3.2",
+    "autoprefixer": "10.4.4",
+    "parcel": "2.3.2",
+    "preact": "10.6.4"
   },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "arrowParens": "always"
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat",
+    "react/jsx-runtime": "preact/jsx-runtime"
   },
-  "engines": {
-    "yarn": ">=1"
-  }
+  "files": [
+    "/dist",
+    "LICENSE"
+  ]
 }
